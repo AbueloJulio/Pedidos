@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Abuelo Julio — Portal de Pedidos</title>
+  <title>Abuelo Julio - Portal de Pedidos</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
@@ -38,7 +39,7 @@
       min-height: 100%;
       background: linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
       color: var(--text);
-      font-family: 'Inter', sans-serif;
+      font-family: "Inter", sans-serif;
       font-size: 15px;
       line-height: 1.5;
     }
@@ -85,7 +86,7 @@
       box-shadow:0 12px 40px rgba(0,0,0,.3);
     }
     .logo-wrap h1{
-      font-family:'Playfair Display', serif;
+      font-family:"Playfair Display", serif;
       font-size:2.1rem; font-weight:700; margin-top:1rem;
     }
     .logo-wrap p{
@@ -115,7 +116,7 @@
       font-size:.96rem;
       outline:none;
       transition:.2s;
-      font-family:'Inter', sans-serif;
+      font-family:"Inter", sans-serif;
     }
     .form-group textarea{ resize:vertical; min-height:84px; }
     .form-group input:focus, .form-group select:focus, .form-group textarea:focus{
@@ -130,7 +131,7 @@
 
     .btn-primary, .btn-secondary, .btn-ghost, .btn-danger{
       border:none; border-radius:12px; cursor:pointer;
-      font-family:'Inter', sans-serif; font-weight:700; transition:.2s;
+      font-family:"Inter", sans-serif; font-weight:700; transition:.2s;
     }
     .btn-primary{
       background:linear-gradient(180deg, var(--accent2), var(--accent));
@@ -148,7 +149,7 @@
     .link-btn{
       background:none; border:none; cursor:pointer;
       color:var(--accent); font-size:.88rem;
-      font-family:'Inter', sans-serif;
+      font-family:"Inter", sans-serif;
       text-decoration:underline; text-underline-offset:3px;
       padding:0; transition:.2s;
     }
@@ -188,7 +189,7 @@
       border:2px solid rgba(216,176,123,.48);
     }
     .top-brand .brand-text{ display:flex; flex-direction:column; line-height:1.06; }
-    .top-brand strong{ font-family:'Playfair Display', serif; font-size:1.52rem; }
+    .top-brand strong{ font-family:"Playfair Display", serif; font-size:1.52rem; }
     .top-brand span{ color:var(--text2); font-size:.8rem; letter-spacing:.1em; text-transform:uppercase; }
 
     .top-right{
@@ -300,7 +301,7 @@
       display:flex; align-items:flex-start;
       justify-content:space-between; gap:1rem; flex-wrap:wrap;
     }
-    .page-head h2{ font-family:'Playfair Display', serif; font-size:2rem; font-weight:700; }
+    .page-head h2{ font-family:"Playfair Display", serif; font-size:2rem; font-weight:700; }
     .page-head p{ color:var(--text2); margin-top:.35rem; }
 
     .groups{ display:flex; flex-direction:column; gap:1.2rem; }
@@ -353,7 +354,7 @@
       background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
     }
     .pedido-head-left{ display:flex; flex-direction:column; gap:.35rem; }
-    .pedido-num{ font-family:'Playfair Display', serif; font-size:1.26rem; font-weight:700; }
+    .pedido-num{ font-family:"Playfair Display", serif; font-size:1.26rem; font-weight:700; }
     .pedido-date{ color:var(--text2); font-size:.9rem; }
     .pedido-head-right{
       display:flex; gap:.6rem; align-items:center;
@@ -455,7 +456,7 @@
       display:flex; justify-content:space-between;
       align-items:center; gap:1rem;
     }
-    .modal-head h3{ font-family:'Playfair Display', serif; font-size:1.6rem; }
+    .modal-head h3{ font-family:"Playfair Display", serif; font-size:1.6rem; }
     .modal-body{ padding:1.2rem; }
     .modal-grid{
       display:grid;
@@ -478,12 +479,43 @@
 
     .line-item{
       display:grid;
-      grid-template-columns:1.7fr .7fr .8fr auto;
+      grid-template-columns:1.7fr .7fr 1fr auto;
       gap:.8rem; align-items:end;
       margin-bottom:.9rem; padding:.9rem;
       border:1px solid var(--line); border-radius:16px;
       background:var(--panel2);
     }
+
+    .unit-mosaic{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0, 1fr));
+      gap:.45rem;
+    }
+    .unit-option{
+      min-height:48px;
+      padding:.72rem .5rem;
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:#13161a;
+      color:var(--text2);
+      font-weight:700;
+      font-size:.85rem;
+      text-align:center;
+      cursor:pointer;
+      transition:.18s;
+    }
+    .unit-option:hover{
+      border-color:rgba(216,176,123,.45);
+      color:var(--text);
+      background:rgba(216,176,123,.08);
+    }
+    .unit-option.active{
+      border-color:rgba(216,176,123,.75);
+      background:rgba(216,176,123,.18);
+      color:var(--accent2);
+      box-shadow:0 0 0 3px rgba(216,176,123,.1);
+    }
+
     .modal-actions{
       display:flex; justify-content:space-between;
       gap:.8rem; padding:1rem 1.2rem 1.2rem;
@@ -511,6 +543,7 @@
       .pedido-head{ flex-direction:column; align-items:flex-start; }
       .pedido-head-right{ justify-content:flex-start; }
       .summary-grid{ grid-template-columns:1fr; }
+      .unit-mosaic{ grid-template-columns:1fr; }
     }
   </style>
 </head>
@@ -639,7 +672,7 @@
             </div>
             <div>
               <div class="s-label">Mail</div>
-              <div class="s-value">Agustin Sevilla  as@abuelojulio.com</div>
+              <div class="s-value">Agustin Sevilla as@abuelojulio.com</div>
             </div>
           </div>
           <div class="support-row">
@@ -648,7 +681,7 @@
             </div>
             <div>
               <div class="s-label">Teléfono / WhatsApp</div>
-              <div class="s-value">+5493329522856 </div>
+              <div class="s-value">+5493329522856</div>
             </div>
           </div>
           <div class="support-row">
@@ -657,7 +690,7 @@
             </div>
             <div>
               <div class="s-label">Horario de atención</div>
-              <div class="s-value">Lun–Vie, 8 a 17 hs</div>
+              <div class="s-value">Lun-Vie, 8 a 17 hs</div>
             </div>
           </div>
         </div>
@@ -796,7 +829,7 @@
   }
 
   function showView(id) {
-    document.querySelectorAll(".view").forEach(v => v.classList.remove("active"));
+    document.querySelectorAll(".view").forEach((v) => v.classList.remove("active"));
     document.getElementById(id).classList.add("active");
   }
 
@@ -855,7 +888,7 @@
       currentClienteId = s.clienteId;
       enterPedidos();
       return true;
-    } catch(e) {
+    } catch (e) {
       return false;
     }
   }
@@ -875,7 +908,7 @@
     }
     const entrega = new Date(fecha);
     entrega.setDate(entrega.getDate() + daysToFriday);
-    const meses = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+    const meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
     return entrega.getDate() + " de " + meses[entrega.getMonth()] + " " + entrega.getFullYear();
   }
 
@@ -918,10 +951,39 @@
 
   function getProductoOptionsHtml(selectedId = "") {
     return `<option value="">Seleccionar corte</option>` +
-      allowedProductos.map(p => `
+      allowedProductos.map((p) => `
         <option value="${escHtml(p.productoId)}" ${String(selectedId) === String(p.productoId) ? "selected" : ""}>
           ${escHtml(p.productoNombre)}
         </option>`).join("");
+  }
+
+  function getUnidadMosaicHtml(selectedUnidad = "Kg") {
+    const unidades = ["Kg", "Unidades", "Cajas"];
+    return `
+      <div class="unit-mosaic">
+        ${unidades.map((unidad) => `
+          <button
+            type="button"
+            class="unit-option${unidad === selectedUnidad ? " active" : ""}"
+            data-unit="${unidad}"
+          >
+            ${unidad}
+          </button>
+        `).join("")}
+      </div>
+      <input type="hidden" class="item-unidad" value="${escHtml(selectedUnidad)}" />
+    `;
+  }
+
+  function bindUnidadMosaic(row) {
+    const hidden = row.querySelector(".item-unidad");
+    row.querySelectorAll(".unit-option").forEach((button) => {
+      button.addEventListener("click", () => {
+        row.querySelectorAll(".unit-option").forEach((btn) => btn.classList.remove("active"));
+        button.classList.add("active");
+        hidden.value = button.dataset.unit;
+      });
+    });
   }
 
   function addLineItemRow(item = {}) {
@@ -939,24 +1001,21 @@
       </div>
       <div class="form-group" style="margin-bottom:0;">
         <label>Unidad</label>
-        <select class="item-unidad">
-          <option value="Kg" ${item.unidad === "Kg" ? "selected" : ""}>Kg</option>
-          <option value="Unidades" ${item.unidad === "Unidades" ? "selected" : ""}>Unidades</option>
-          <option value="Cajas" ${item.unidad === "Cajas" ? "selected" : ""}>Cajas</option>
-        </select>
+        ${getUnidadMosaicHtml(item.unidad || "Kg")}
       </div>
       <div>
         <button type="button" class="btn-danger btn-remove-line">Eliminar</button>
       </div>`;
     wrap.appendChild(div);
+    bindUnidadMosaic(div);
     div.querySelector(".btn-remove-line").addEventListener("click", () => div.remove());
   }
 
   function collectLineItems() {
-    return [...document.querySelectorAll(".line-item")].map(row => ({
+    return [...document.querySelectorAll(".line-item")].map((row) => ({
       productoId: row.querySelector(".item-producto").value,
       cantidad: row.querySelector(".item-cantidad").value,
-      unidad: row.querySelector(".item-unidad").value
+      unidad: row.querySelector(".item-unidad").value,
     }));
   }
 
@@ -966,7 +1025,7 @@
 
     document.getElementById("filter-corte").innerHTML =
       `<option value="">Todos los cortes</option>` +
-      allowedProductos.map(p => `<option value="${escHtml(p.productoId)}">${escHtml(p.productoNombre)}</option>`).join("");
+      allowedProductos.map((p) => `<option value="${escHtml(p.productoId)}">${escHtml(p.productoNombre)}</option>`).join("");
   }
 
   async function loadClienteDirecciones() {
@@ -975,7 +1034,7 @@
 
     const sel = document.getElementById("pedido-direccion");
     sel.innerHTML = `<option value="">Seleccionar dirección...</option>` +
-      clienteDirecciones.map(d => `<option value="${escHtml(d.direccionId)}">${escHtml(d.displayName)}</option>`).join("");
+      clienteDirecciones.map((d) => `<option value="${escHtml(d.direccionId)}">${escHtml(d.displayName)}</option>`).join("");
   }
 
   function getStatusClass(status) {
@@ -988,7 +1047,7 @@
 
   function applySummaryFilter(filterValue) {
     activeStatusFilter = filterValue;
-    document.querySelectorAll(".summary-card").forEach(c => {
+    document.querySelectorAll(".summary-card").forEach((c) => {
       c.classList.toggle("active-filter", c.dataset.filter === filterValue);
     });
     loadPedidos();
@@ -1046,7 +1105,7 @@
       const data = await api({
         action: "getPedidos",
         clienteId: currentClienteId,
-        fechaDesde, fechaHasta, corteId, estado
+        fechaDesde, fechaHasta, corteId, estado,
       });
 
       if (!data.success) {
@@ -1056,7 +1115,7 @@
 
       const grupos = data.grupos || [];
       const resumen = data.resumen || { total:0, preliminar:0, confirmado:0, entregado:0 };
-      pedidosCache = grupos.flatMap(g => (g.periodos || []).flatMap(periodo => periodo.pedidos || []));
+      pedidosCache = grupos.flatMap((g) => (g.periodos || []).flatMap((periodo) => periodo.pedidos || []));
 
       document.getElementById("sum-total").textContent = resumen.total || 0;
       document.getElementById("sum-preliminar").textContent = resumen.preliminar || 0;
@@ -1127,8 +1186,7 @@
 
       const first = document.querySelector(".pedido-card");
       if (first) first.classList.add("open");
-
-    } catch(err) {
+    } catch (err) {
       console.error(err);
       listEl.innerHTML = `<div class="empty">${escHtml(err.message || "Error de conexión. Intentá de nuevo.")}</div>`;
     }
@@ -1140,7 +1198,7 @@
 
   function getTodayInputValue() {
     const today = new Date();
-    return `${today.getFullYear()}-${String(today.getMonth()+1).padStart(2,"0")}-${String(today.getDate()).padStart(2,"0")}`;
+    return `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, "0")}-${String(today.getDate()).padStart(2, "0")}`;
   }
 
   function setTodayInModal() {
@@ -1161,7 +1219,7 @@
   }
 
   function openEditPedido(pedidoId) {
-    const pedido = pedidosCache.find(p => String(p.pedidoId) === String(pedidoId));
+    const pedido = pedidosCache.find((p) => String(p.pedidoId) === String(pedidoId));
     if (!pedido) return;
 
     editingPedidoId = pedidoId;
@@ -1181,14 +1239,14 @@
 
     updateEstimatedDelivery();
 
-    (pedido.items && pedido.items.length ? pedido.items : [{}]).forEach(item => addLineItemRow({
-      productoId: item.productoId, cantidad: item.cantidad, unidad: item.unidad
+    (pedido.items && pedido.items.length ? pedido.items : [{}]).forEach((item) => addLineItemRow({
+      productoId: item.productoId, cantidad: item.cantidad, unidad: item.unidad,
     }));
     showModal();
   }
 
   function duplicatePedido(pedidoId) {
-    const pedido = pedidosCache.find(p => String(p.pedidoId) === String(pedidoId));
+    const pedido = pedidosCache.find((p) => String(p.pedidoId) === String(pedidoId));
     if (!pedido) return;
 
     editingPedidoId = "";
@@ -1207,8 +1265,8 @@
 
     setTodayInModal();
 
-    (pedido.items && pedido.items.length ? pedido.items : [{}]).forEach(item => addLineItemRow({
-      productoId: item.productoId, cantidad: item.cantidad, unidad: item.unidad
+    (pedido.items && pedido.items.length ? pedido.items : [{}]).forEach((item) => addLineItemRow({
+      productoId: item.productoId, cantidad: item.cantidad, unidad: item.unidad,
     }));
     showModal();
   }
@@ -1267,7 +1325,7 @@
 
       hideModal();
       await loadPedidos();
-    } catch(err) {
+    } catch (err) {
       console.error(err);
       showMsg("pedido-modal-msg", "Error de conexión al guardar.", "error");
       savingPedido = false;
@@ -1277,7 +1335,7 @@
   }
 
   async function deletePedido(pedidoId) {
-    const pedido = pedidosCache.find(p => String(p.pedidoId) === String(pedidoId));
+    const pedido = pedidosCache.find((p) => String(p.pedidoId) === String(pedidoId));
     if (!pedido || !confirm(`¿Querés eliminar el pedido #${pedido.pedidoNumero}?`)) return;
 
     try {
@@ -1287,7 +1345,7 @@
         return;
       }
       await loadPedidos();
-    } catch(err) {
+    } catch (err) {
       console.error(err);
       alert("Error de conexión al eliminar.");
     }
@@ -1319,7 +1377,7 @@
     document.getElementById("filter-fecha-desde").value = "";
     document.getElementById("filter-fecha-hasta").value = "";
     document.getElementById("filter-corte").innerHTML = `<option value="">Todos los cortes</option>`;
-    document.querySelectorAll(".summary-card").forEach(c => {
+    document.querySelectorAll(".summary-card").forEach((c) => {
       c.classList.toggle("active-filter", c.dataset.filter === "");
     });
     hideModal();
@@ -1353,7 +1411,7 @@
       } else {
         await enterPedidos();
       }
-    } catch(err) {
+    } catch (err) {
       console.error(err);
       showMsg("login-msg", "Error de conexión. Intentá de nuevo.", "error");
     } finally {
@@ -1362,8 +1420,8 @@
     }
   });
 
-  ["login-mail","login-pass"].forEach(id => {
-    document.getElementById(id).addEventListener("keydown", e => {
+  ["login-mail", "login-pass"].forEach((id) => {
+    document.getElementById(id).addEventListener("keydown", (e) => {
       if (e.key === "Enter") document.getElementById("btn-login").click();
     });
   });
@@ -1393,7 +1451,7 @@
       }
       showMsg("setpass-msg", "Contraseña creada correctamente.", "success");
       setTimeout(() => enterPedidos(), 700);
-    } catch(err) {
+    } catch (err) {
       console.error(err);
       showMsg("setpass-msg", "Error de conexión.", "error");
     } finally {
@@ -1429,7 +1487,7 @@
         return;
       }
       showMsg("forgot-msg", "Si el correo está registrado, vas a recibir el enlace en unos minutos.", "success");
-    } catch(err) {
+    } catch (err) {
       console.error(err);
       showMsg("forgot-msg", "Error de conexión. Intentá de nuevo.", "error");
     } finally {
@@ -1472,7 +1530,7 @@
       currentClienteId = data.clienteId;
       history.replaceState(null, "", window.location.pathname);
       setTimeout(() => enterPedidos(), 900);
-    } catch(err) {
+    } catch (err) {
       console.error(err);
       showMsg("reset-msg", "Error de conexión.", "error");
     } finally {
@@ -1490,13 +1548,13 @@
     document.getElementById("filter-fecha-hasta").value = "";
     document.getElementById("filter-corte").value = "";
     activeStatusFilter = "";
-    document.querySelectorAll(".summary-card").forEach(c => {
+    document.querySelectorAll(".summary-card").forEach((c) => {
       c.classList.toggle("active-filter", c.dataset.filter === "");
     });
     loadPedidos();
   });
 
-  document.querySelectorAll(".summary-card").forEach(card => {
+  document.querySelectorAll(".summary-card").forEach((card) => {
     card.addEventListener("click", () => {
       const f = card.dataset.filter;
       if (activeStatusFilter === f) {
